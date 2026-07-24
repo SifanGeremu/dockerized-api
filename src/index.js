@@ -9,13 +9,16 @@ const PORT = process.env.PORT||3000;
 //middlewares
 
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 
 //routes
-
+app.get('/',(req,res)=>{
+    res.send('hello dockerized api');
+})
 //error handling middlewares 
 
 //server running 
 app.listen(PORT,()=>{
     console.log(`server is running on PORT ${PORT}`);
 })
+
