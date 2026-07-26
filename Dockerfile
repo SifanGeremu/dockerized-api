@@ -2,7 +2,8 @@ FROM node:22
 WORKDIR /app
 COPY package*.json ./
 
-RUN npm install
+ENV NODE_ENV=production
+RUN npm ci --omit=dev
 COPY . .
 EXPOSE 3000
-CMD ["node", "src/index.js"]
+CMD ["npm", "start"]
