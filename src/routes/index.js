@@ -1,17 +1,7 @@
 import { Router } from 'express';
-import {
-  getHealth,
-  getWelcome,
-  getTime,
-  getDbVersion,
-} from '../controller/healthController.js';
+import { getHealth, getWelcome, getTime, getDbVersion } from '../controller/healthController.js';
 import { listItems, createItem, getItem } from '../controller/itemsController.js';
-import {
-  getStats,
-  listProjects,
-  createProject,
-  getProject,
-} from '../controller/platformController.js';
+import { getStats, listProjects, createProject, getProject } from '../controller/platformController.js';
 
 const router = Router();
 
