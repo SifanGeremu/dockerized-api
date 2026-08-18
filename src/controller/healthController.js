@@ -2,8 +2,9 @@ import pool from '../config/database.js';
 
 export const getWelcome = (req, res) => {
     res.json({
-        message: 'hello dockerized api',
+        message: 'hello dockerized api platform',
         status: 'running',
+        version: 'v1.0.0',
     });
 };
 
@@ -29,13 +30,13 @@ export const getTime = (req, res) => {
     const now = new Date();
     res.json({
         serverTime: now.toISOString(),
-        uptimeSeconds: process.uptime(),
+        uptimeSeconds: Number(process.uptime().toFixed(2)),
     });
 };
 
 export const getDbVersion = async (req, res) => {
     try {
-        const result = await pool.query("SELECT version() as version");
+        const result = await pool.query('SELECT version() as version');
         res.json({
             database: 'postgres',
             version: result.rows[0].version,
