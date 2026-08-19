@@ -37,5 +37,6 @@ export const getCurrentUser = (req, res) => {
     name: user.name,
     email: user.email,
     role: user.role,
+    avatar:user.avatar
   });
 };
